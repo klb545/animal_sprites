@@ -1,20 +1,15 @@
-/* body{
-  margin: 10px;
-} */
-
 .sprite{
   margin: 0px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
-
 .game-container{
   background-color: aqua;
-  margin: 0px;
 }
 
 
+ /* Universal pixel colours */
 .pixel{
   background-color: transparent;
   height: 5px;
@@ -27,7 +22,7 @@
   background-color: white;
 }
 
-
+ /* Duck-specific pixel colours */
 .duck-yellow-pixel{
   background-color: #F6C904;
 }
@@ -35,7 +30,7 @@
   background-color: rgb(246,105,4);
 }
 
-
+ /* Frog-specific pixel colours */
 .frog-green-pixel{
   background-color: green;
 }
@@ -48,8 +43,4 @@
 .frog-yellow-pixel{
   background-color: rgb(244,220,3)
 }
-
-
-
-
 
