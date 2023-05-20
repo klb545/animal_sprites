@@ -4,8 +4,6 @@ import FrogSprite from "./FrogSprite";
 
 const SelectedSprite = ({containerHeight, containerWidth, selectedAnimal, positionX, positionY}) => {
 
-    // const [selectedAnimal, setSelectedAnimal] = useState("duck");
-
     const returnBody = () => {
         if(selectedAnimal==="duck"){
             return <DuckSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={positionX} positionY={positionY}/>
@@ -17,12 +15,9 @@ const SelectedSprite = ({containerHeight, containerWidth, selectedAnimal, positi
 
     return ( 
         <>
-        {/* {selectedAnimal==="duck" ? <DuckSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={positionX} positionY={positionY}/> : <FrogSprite containerHeight={containerHeight} containerWidth={containerWidth} selectedAnimal={selectedAnimal} positionX={positionX} positionY={positionY} />} */}
-        {returnBody()}
+            {returnBody()}
         </>
      );
 }
  
 export default SelectedSprite;
-
-

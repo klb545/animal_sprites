@@ -21,26 +21,25 @@ const GameContainer = () => {
     const [positionY, setPositionY] = useState(150);
 
     const moveRight = () => {
-        if(positionX <= containerWidth - 60){
-            setPositionX(positionX + 2);
+        if(positionX <= containerWidth - 70){
+            setPositionX(positionX + 10);
         }
     }
     const moveLeft = () => {
-        if(positionX >= 0){
-            setPositionX(positionX - 2);
+        if(positionX >= 10){
+            setPositionX(positionX - 10);
         }
     }
     const moveDown = () => {
-        if(positionY <= containerHeight - 60){
-            setPositionY(positionY + 2);
+        if(positionY <= containerHeight - 70){
+            setPositionY(positionY + 10);
         }
     }
     const moveUp = () => {
-        if(positionY >= 0){
-            setPositionY(positionY - 2);
+        if(positionY >= 10){
+            setPositionY(positionY - 10);
         }
     }
-
 
     document.body.onkeydown = function(e){
         if(selectedAnimal && e.code === 'ArrowRight'){
@@ -69,12 +68,7 @@ const GameContainer = () => {
     };
 
     useEffect(() => {
-        
         document.body.addEventListener('keydown', handleKeyDown);
-        // Clean up the event listener when the component unmounts
-        return () => {
-            document.body.removeEventListener('keydown', handleKeyDown);
-        };
     }, [handleKeyDown]);
 
     return ( 
@@ -85,5 +79,4 @@ const GameContainer = () => {
 }
  
 export default GameContainer;
-
 
