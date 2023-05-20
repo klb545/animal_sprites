@@ -57,12 +57,8 @@ const GameContainer = () => {
         }
     }
 
-
-
     const handleKeyDown = (e) => {
         if (e.code === 'Space') {
-            // setDuckSelected(prevState => !prevState);
-            // setFrogSelected(prevState => !prevState);
             if(selectedAnimal=="duck"){
                 setSelectedAnimal("frog");
             }
@@ -81,29 +77,13 @@ const GameContainer = () => {
         };
     }, [handleKeyDown]);
 
-
     return ( 
         <div className="game-container" style={{height: `${containerHeight}px`, width: `${containerWidth}px`}}>
-            {/* <FrogSprite containerHeight={containerHeight} containerWidth={containerWidth} selected={frogSelected} positionX={positionX} positionY={positionY}/>
-            <DuckSprite containerHeight={containerHeight} containerWidth={containerWidth} selected={duckSelected} positionX={positionX} positionY={positionY}/> */}
             <SelectedSprite containerHeight={containerHeight} containerWidth={containerWidth} selectedAnimal={selectedAnimal} positionX={positionX} positionY={positionY}/>
         </div>
      );
 }
  
 export default GameContainer;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
