@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const DuckSprite = ({containerHeight, containerWidth}) => {
+const DuckSprite = ({containerHeight, containerWidth, selected}) => {
 
     const [positionX, setPositionX] = useState(150);
     const [positionY, setPositionY] = useState(150);
@@ -28,208 +28,115 @@ const DuckSprite = ({containerHeight, containerWidth}) => {
 
 
     document.body.onkeydown = function(e){
-        if(e.code === 'ArrowRight'){
+        if(selected && e.code === 'ArrowRight'){
             moveRight();
         }
-        if(e.code === 'ArrowLeft'){
+        if(selected && e.code === 'ArrowLeft'){
             moveLeft();
         }
-        if(e.code === 'ArrowDown'){
+        if(selected && e.code === 'ArrowDown'){
             moveDown();
         }
-        if(e.code === 'ArrowUp'){
+        if(selected && e.code === 'ArrowUp'){
             moveUp();
         }
     }
+
+    const orangePix = <div className="pixel duck-orange-pixel"></div>
+    const yellowPix = <div className="pixel duck-yellow-pixel"></div>
+    const blackPix = <div className="pixel black-pixel"></div>
+    const transparentPix = <div className="pixel"></div>
 
 
   return (
     <div 
         className='sprite' 
         style={{
-            height: "50px", 
-            width: "50px", 
-            display: "flex", 
-            // alignItems: "center", 
-            // justifyContent: "center", 
+            height: "60px", 
+            width: "60px", 
+            display: "flex",
             position: "absolute",
             left: `${positionX}px`,
             top: `${positionY}px`,
         }}
     >
-                <div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-            </div>  
-            <div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-            </div> 
-            <div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-            </div> 
-            <div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "black"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-            </div> 
-            <div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "black"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-            </div> 
-            <div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "black"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-            </div>  
-            <div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "black"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-            </div> 
-            <div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "black"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "black"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-            </div> 
-            <div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "rgb(246,105,4)"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-            </div> 
-            <div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "rgb(246,105,4)"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "rgb(246,105,4)"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "rgb(246,105,4)"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-            </div> 
-            <div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "rgb(246,105,4)"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "rgb(246,105,4)"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "#F6C904"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-            </div> 
-            <div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "rgb(246,105,4)"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-                <div style={{height: "5px", width: "5px", backgroundColor: "transparent"}}></div>
-            </div> 
+        <div>
+            {transparentPix}{transparentPix}{transparentPix}{transparentPix}
+            {yellowPix}{yellowPix}{yellowPix}
+            {transparentPix}{transparentPix}{transparentPix}{transparentPix}{transparentPix}
+        </div>  
+        <div>
+            {transparentPix}{transparentPix}{transparentPix}{transparentPix}{transparentPix}
+            {yellowPix}{yellowPix}{yellowPix}{yellowPix}
+            {transparentPix}{transparentPix}{transparentPix}
+        </div> 
+        <div>
+            {transparentPix}{transparentPix}{transparentPix}{transparentPix}{transparentPix}{transparentPix}
+            {yellowPix}{yellowPix}{yellowPix}{yellowPix}
+            {transparentPix}{transparentPix}
+        </div> 
+        <div>
+            {transparentPix}{transparentPix}{transparentPix}{transparentPix}{transparentPix}
+            {yellowPix}{yellowPix}
+            {blackPix}
+            {yellowPix}{yellowPix}{yellowPix}
+            {transparentPix}
+        </div> 
+        <div>
+            {transparentPix}{transparentPix}{transparentPix}{transparentPix}{transparentPix}
+            {yellowPix}{yellowPix}{yellowPix}
+            {blackPix}
+            {yellowPix}{yellowPix}{yellowPix}
+        </div> 
+        <div>
+            {transparentPix}
+            {yellowPix}{yellowPix}{yellowPix}
+            {transparentPix}
+            {yellowPix}{yellowPix}{yellowPix}{yellowPix}
+            {blackPix}
+            {yellowPix}{yellowPix}
+        </div>  
+        <div>
+            {yellowPix}{yellowPix}{yellowPix}{yellowPix}{yellowPix}{yellowPix}{yellowPix}{yellowPix}{yellowPix}
+            {blackPix}
+            {yellowPix}{yellowPix}
+        </div> 
+        <div>
+            {yellowPix}{yellowPix}
+            {blackPix}
+            {yellowPix}{yellowPix}{yellowPix}{yellowPix}{yellowPix}
+            {blackPix}
+            {yellowPix}{yellowPix}{yellowPix}
+        </div> 
+        <div>
+            {yellowPix}{yellowPix}{yellowPix}{yellowPix}
+            {orangePix}
+            {yellowPix}{yellowPix}{yellowPix}{yellowPix}{yellowPix}{yellowPix}
+            {transparentPix}
+        </div> 
+        <div>
+            {transparentPix}
+            {yellowPix}
+            {orangePix}{orangePix}{orangePix}
+            {transparentPix}
+            {yellowPix}{yellowPix}{yellowPix}{yellowPix}
+            {transparentPix}{transparentPix}
+        </div> 
+        <div>
+            {transparentPix}{transparentPix}{transparentPix}
+            {orangePix}{orangePix}
+            {transparentPix}{transparentPix}
+            {yellowPix}{yellowPix}
+            {transparentPix}{transparentPix}{transparentPix}
+        </div> 
+        <div>
+            {transparentPix}{transparentPix}{transparentPix}
+            {orangePix}
+            {transparentPix}{transparentPix}{transparentPix}{transparentPix}{transparentPix}{transparentPix}{transparentPix}{transparentPix}
+        </div> 
     </div>
   );
 };
 
 export default DuckSprite;
-
-
 

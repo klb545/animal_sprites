@@ -15,18 +15,39 @@
 }
 
 
+.pixel{
+  background-color: transparent;
+  height: 5px;
+  width: 5px;
+}
+.black-pixel{
+  background-color: black;
+}
+.white-pixel{
+  background-color: white;
+}
 
 
+.duck-yellow-pixel{
+  background-color: #F6C904;
+}
+.duck-orange-pixel{
+  background-color: rgb(246,105,4);
+}
 
 
-
-
-
-
-
-
-
-
+.frog-green-pixel{
+  background-color: green;
+}
+.frog-light-green-pixel{
+  background-color: rgb(66,176,41);
+}
+.frog-cream-pixel{
+  background-color: rgb(241,235,155);
+}
+.frog-yellow-pixel{
+  background-color: rgb(244,220,3)
+}
 
 
 
