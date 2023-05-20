@@ -1,49 +1,49 @@
 import React, { useState, useEffect } from 'react';
 
-const FrogSprite = ({containerHeight, containerWidth, selected}) => {
+const FrogSprite = ({containerHeight, containerWidth, positionX, positionY}) => {
 
-    const [positionX, setPositionX] = useState(0);
-    const [positionY, setPositionY] = useState(0);
+    // const [positionX, setPositionX] = useState(0);
+    // const [positionY, setPositionY] = useState(0);
 
-    const moveRight = () => {
-        if(positionX <= containerWidth - 60){
-            setPositionX(positionX + 1);
-        }
-    }
-    const moveLeft = () => {
-        if(positionX >= 0){
-            setPositionX(positionX - 1);
-        }
-    }
-    const moveDown = () => {
-        if(positionY <= containerHeight - 59){
-            setPositionY(positionY + 1);
-        }
-    }
-    const moveUp = () => {
-        if(positionY >= 0){
-            setPositionY(positionY - 1);
-        }
-    }
+    // const moveRight = () => {
+    //     if(positionX <= containerWidth - 60){
+    //         setPositionX(positionX + 1);
+    //     }
+    // }
+    // const moveLeft = () => {
+    //     if(positionX >= 0){
+    //         setPositionX(positionX - 1);
+    //     }
+    // }
+    // const moveDown = () => {
+    //     if(positionY <= containerHeight - 59){
+    //         setPositionY(positionY + 1);
+    //     }
+    // }
+    // const moveUp = () => {
+    //     if(positionY >= 0){
+    //         setPositionY(positionY - 1);
+    //     }
+    // }
 
 
-    document.body.onkeydown = function(e){
-        if (selected) {
-            if(e.code === 'ArrowRight'){
-                moveRight();
-            }
-            if(e.code === 'ArrowLeft'){
-                moveLeft();
-            }
-            if(e.code === 'ArrowDown'){
-                moveDown();
-            }
-            if(e.code === 'ArrowUp'){
-                moveUp();
-            }
-        }
+    // document.body.onkeydown = function(e){
+    //     if (selected) {
+    //         if(e.code === 'ArrowRight'){
+    //             moveRight();
+    //         }
+    //         if(e.code === 'ArrowLeft'){
+    //             moveLeft();
+    //         }
+    //         if(e.code === 'ArrowDown'){
+    //             moveDown();
+    //         }
+    //         if(e.code === 'ArrowUp'){
+    //             moveUp();
+    //         }
+    //     }
         
-    }
+    // }
 
     const transparentPix = <div className="pixel"></div>
     const greenPix = <div className="pixel frog-green-pixel"></div>
