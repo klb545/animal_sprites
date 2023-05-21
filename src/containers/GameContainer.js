@@ -4,14 +4,8 @@ import SelectedSprite from "../components/SelectedSprite";
 const GameContainer = () => {
     const [containerWidth, setContainerWidth] = useState(500);
     const [containerHeight, setContainerHeight] = useState(500);
-    const [selectedAnimal, setSelectedAnimal] = useState("duck");
 
-    // document.body.onkeydown = function(e){
-    //     if(e.code == "Space"){ 
-    //         setDuckSelected(prevState => !prevState);
-    //         setFrogSelected(prevState => !prevState);
-    //     }
-    // }
+    const [selectedAnimal, setSelectedAnimal] = useState("duck");
 
     const [positionX, setPositionX] = useState(150);
     const [positionY, setPositionY] = useState(150);
@@ -36,8 +30,8 @@ const GameContainer = () => {
             setPositionY(positionY - 10);
         }
     }
-
-    document.body.onkeydown = function(e){
+    
+    const handleArrowKeys = (e) => {
         if(selectedAnimal && e.code === 'ArrowRight'){
             moveRight();
         }
@@ -50,7 +44,21 @@ const GameContainer = () => {
         if(selectedAnimal && e.code === 'ArrowUp'){
             moveUp();
         }
-    }
+    };
+    // window.onkeydown = function(e){
+    //     if(selectedAnimal && e.code === 'ArrowRight'){
+    //         moveRight();
+    //     }
+    //     if(selectedAnimal && e.code === 'ArrowLeft'){
+    //         moveLeft();
+    //     }
+    //     if(selectedAnimal && e.code === 'ArrowDown'){
+    //         moveDown();
+    //     }
+    //     if(selectedAnimal && e.code === 'ArrowUp'){
+    //         moveUp();
+    //     }
+    // }
 
     const handleSpaceBarToggle = (e) => {
         if (e.code === 'Space') {
@@ -67,10 +75,12 @@ const GameContainer = () => {
     };
 
     useEffect(() => {
-        document.body.addEventListener('keydown', handleSpaceBarToggle);
+        window.addEventListener("keydown", handleArrowKeys);
+        window.addEventListener('keydown', handleSpaceBarToggle);
         // this is a 'cleanup' function - it removes the event listener
         return () => {
-            document.body.removeEventListener('keydown', handleSpaceBarToggle);
+            window.removeEventListener("keydown", handleArrowKeys);
+            window.removeEventListener('keydown', handleSpaceBarToggle);
         }
     }, [selectedAnimal]);
 
