@@ -10,7 +10,8 @@ const GameContainer = () => {
 
     const [selectedAnimal, setSelectedAnimal] = useState("duck");
 
-    const [fishImage, setFishImage] = useState("heading left");
+    const [fishImage, setFishImage] = useState("heading right");
+    const [duckImage, setDuckImage] = useState("heading left");
 
     const [fishPositionX, setFishPositionX] = useState(100);
     const [fishPositionY, setFishPositionY] = useState(100);
@@ -29,6 +30,7 @@ const GameContainer = () => {
             }
             if(selectedAnimal=="duck" && duckPositionX <= containerWidth - 70){
                 setDuckPositionX(duckPositionX + 10);
+                setDuckImage("heading right");
             }
     }
     const moveLeft = () => {
@@ -41,6 +43,7 @@ const GameContainer = () => {
         }
         if(selectedAnimal=="duck" && duckPositionX >= 10){
             setDuckPositionX(duckPositionX - 10);
+            setDuckImage("heading left");
         }
     }
     const moveDown = () => {
@@ -109,7 +112,7 @@ const GameContainer = () => {
             {/* {selectedAnimal == "fish" ? <FishSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={positionX} positionY={positionY}/> : selectedAnimal == "frog" ? <FrogSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={positionX} positionY={positionY}/> : <DuckSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={positionX} positionY={positionY}/>} */}
             <FishSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={fishPositionX} positionY={fishPositionY} fishImage={fishImage}/>
             <FrogSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={frogPositionX} positionY={frogPositionY}/>
-            <DuckSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={duckPositionX} positionY={duckPositionY}/>
+            <DuckSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={duckPositionX} positionY={duckPositionY} duckImage={duckImage}/>
         </div>
      );
 }
