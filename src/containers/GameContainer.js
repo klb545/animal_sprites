@@ -1,13 +1,9 @@
 import { useState, useEffect } from "react";
-import DuckSprite from "../components/DuckSprite";
-import FrogSprite from "../components/FrogSprite";
 import SelectedSprite from "../components/SelectedSprite";
 
 const GameContainer = () => {
     const [containerWidth, setContainerWidth] = useState(500);
     const [containerHeight, setContainerHeight] = useState(500);
-    // const [duckSelected, setDuckSelected] = useState(true);
-    // const [frogSelected, setFrogSelected] = useState(false);
     const [selectedAnimal, setSelectedAnimal] = useState("duck");
 
     // document.body.onkeydown = function(e){
@@ -56,20 +52,27 @@ const GameContainer = () => {
         }
     }
 
-    const handleKeyDown = (e) => {
+    const handleSpaceBarToggle = (e) => {
         if (e.code === 'Space') {
             if(selectedAnimal=="duck"){
                 setSelectedAnimal("frog");
             }
             if(selectedAnimal=="frog"){
+                setSelectedAnimal("fish");
+            }
+            if(selectedAnimal=="fish"){
                 setSelectedAnimal("duck");
             }
         }
     };
 
     useEffect(() => {
-        document.body.addEventListener('keydown', handleKeyDown);
-    }, [handleKeyDown]);
+        document.body.addEventListener('keydown', handleSpaceBarToggle);
+        // this is a 'cleanup' function - it removes the event listener
+        return () => {
+            document.body.removeEventListener('keydown', handleSpaceBarToggle);
+        }
+    }, [selectedAnimal]);
 
     return ( 
         <div className="game-container" style={{height: `${containerHeight}px`, width: `${containerWidth}px`}}>

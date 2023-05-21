@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DuckSprite from "./DuckSprite";
 import FrogSprite from "./FrogSprite";
+import FishSprite from "./FishSprite";
 
 const SelectedSprite = ({containerHeight, containerWidth, selectedAnimal, positionX, positionY}) => {
 
@@ -10,6 +11,9 @@ const SelectedSprite = ({containerHeight, containerWidth, selectedAnimal, positi
         }
         if(selectedAnimal==="frog"){
             return <FrogSprite containerHeight={containerHeight} containerWidth={containerWidth} selectedAnimal={selectedAnimal} positionX={positionX} positionY={positionY} />
+        }
+        if(selectedAnimal==="fish"){
+            return <FishSprite containerHeight={containerHeight} containerWidth={containerWidth} selectedAnimal={selectedAnimal} positionX={positionX} positionY={positionY} />
         }
     }
 

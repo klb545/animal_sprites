@@ -1,13 +1,12 @@
-.sprite{
+/* .sprite{
   margin: 0px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-}
+} */
 
 .game-container{
   background-color: aqua;
 }
-
 
  /* Universal pixel colours */
 .pixel{
