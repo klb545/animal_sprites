@@ -90,7 +90,6 @@ const GameContainer = () => {
             }
         }
     };
-
     
     useEffect(() => {
         window.addEventListener('keydown', handleSpaceBarToggle);
