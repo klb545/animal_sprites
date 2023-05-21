@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import SelectedSprite from "../components/SelectedSprite";
+import FishSprite from "../components/FishSprite";
+import FrogSprite from "../components/FrogSprite";
+import DuckSprite from "../components/DuckSprite";
 
 const GameContainer = () => {
     const [containerWidth, setContainerWidth] = useState(500);
@@ -7,41 +10,69 @@ const GameContainer = () => {
 
     const [selectedAnimal, setSelectedAnimal] = useState("duck");
 
-    const [positionX, setPositionX] = useState(150);
-    const [positionY, setPositionY] = useState(150);
+    const [fishPositionX, setFishPositionX] = useState(100);
+    const [fishPositionY, setFishPositionY] = useState(100);
+    const [frogPositionX, setFrogPositionX] = useState(150);
+    const [frogPositionY, setFrogPositionY] = useState(150);
+    const [duckPositionX, setDuckPositionX] = useState(200);
+    const [duckPositionY, setDuckPositionY] = useState(200);
 
     const moveRight = () => {
-        if(positionX <= containerWidth - 70){
-            setPositionX(positionX + 10);
-        }
+            if(selectedAnimal=="fish" && fishPositionX <= containerWidth - 70){
+                setFishPositionX(fishPositionX + 10);
+            }
+            if(selectedAnimal=="frog" && frogPositionX <= containerWidth - 70){
+                setFrogPositionX(frogPositionX + 10);
+            }
+            if(selectedAnimal=="duck" && duckPositionX <= containerWidth - 70){
+                setDuckPositionX(duckPositionX + 10);
+            }
     }
     const moveLeft = () => {
-        if(positionX >= 10){
-            setPositionX(positionX - 10);
+        if(selectedAnimal=="fish" && fishPositionX >= 10){
+            setFishPositionX(fishPositionX - 10);
+        }
+        if(selectedAnimal=="frog" && frogPositionX >= 10){
+            setFrogPositionX(frogPositionX - 10);
+        }
+        if(selectedAnimal=="duck" && duckPositionX >= 10){
+            setDuckPositionX(duckPositionX - 10);
         }
     }
     const moveDown = () => {
-        if(positionY <= containerHeight - 70){
-            setPositionY(positionY + 10);
+        if(selectedAnimal=="fish" && fishPositionY <= containerWidth - 70){
+            setFishPositionY(fishPositionY + 10);
+        }
+        if(selectedAnimal=="frog" && frogPositionY <= containerWidth - 70){
+            setFrogPositionY(frogPositionY + 10);
+        }
+        if(selectedAnimal=="duck" && duckPositionY <= containerWidth - 70){
+            setDuckPositionY(duckPositionY + 10);
         }
     }
     const moveUp = () => {
-        if(positionY >= 10){
-            setPositionY(positionY - 10);
+        if(selectedAnimal=="fish" && fishPositionY >= 10){
+            setFishPositionY(fishPositionY - 10);
+        }
+        if(selectedAnimal=="frog" && frogPositionY >= 10){
+            setFrogPositionY(frogPositionY - 10);
+        }
+        if(selectedAnimal=="duck" && duckPositionY >= 10){
+            setDuckPositionY(duckPositionY - 10);
         }
     }
 
     window.onkeydown = function(e){
-        if(selectedAnimal && e.code === 'ArrowRight'){
+        if(e.code === 'ArrowRight'){
             moveRight();
         }
-        if(selectedAnimal && e.code === 'ArrowLeft'){
+        if(e.code === 'ArrowLeft'){
             moveLeft();
         }
-        if(selectedAnimal && e.code === 'ArrowDown'){
+        if(e.code === 'ArrowDown'){
             moveDown();
         }
-        if(selectedAnimal && e.code === 'ArrowUp'){
+        if(e.code === 'ArrowUp'){
             moveUp();
         }
     }
@@ -60,6 +91,7 @@ const GameContainer = () => {
         }
     };
 
+    
     useEffect(() => {
         window.addEventListener('keydown', handleSpaceBarToggle);
         // this is a 'cleanup' function - it removes the event listener
@@ -70,7 +102,11 @@ const GameContainer = () => {
 
     return ( 
         <div className="game-container" style={{height: `${containerHeight}px`, width: `${containerWidth}px`}}>
-            <SelectedSprite containerHeight={containerHeight} containerWidth={containerWidth} selectedAnimal={selectedAnimal} positionX={positionX} positionY={positionY}/>
+            {/* <SelectedSprite containerHeight={containerHeight} containerWidth={containerWidth} selectedAnimal={selectedAnimal} positionX={positionX} positionY={positionY}/> */}
+            {/* {selectedAnimal == "fish" ? <FishSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={positionX} positionY={positionY}/> : selectedAnimal == "frog" ? <FrogSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={positionX} positionY={positionY}/> : <DuckSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={positionX} positionY={positionY}/>} */}
+            <FishSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={fishPositionX} positionY={fishPositionY}/>
+            <FrogSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={frogPositionX} positionY={frogPositionY}/>
+            <DuckSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={duckPositionX} positionY={duckPositionY}/>
         </div>
      );
 }

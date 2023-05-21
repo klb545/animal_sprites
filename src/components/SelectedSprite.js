@@ -5,15 +5,17 @@ import FishSprite from "./FishSprite";
 
 const SelectedSprite = ({containerHeight, containerWidth, selectedAnimal, positionX, positionY}) => {
 
+    // const [frogPositionX, setFrogPositionX] = useState();
+
     const returnBody = () => {
         if(selectedAnimal==="duck"){
             return <DuckSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={positionX} positionY={positionY}/>
         }
         if(selectedAnimal==="frog"){
-            return <FrogSprite containerHeight={containerHeight} containerWidth={containerWidth} selectedAnimal={selectedAnimal} positionX={positionX} positionY={positionY} />
+            return <FrogSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={positionX} positionY={positionY} />
         }
         if(selectedAnimal==="fish"){
-            return <FishSprite containerHeight={containerHeight} containerWidth={containerWidth} selectedAnimal={selectedAnimal} positionX={positionX} positionY={positionY} />
+            return <FishSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={positionX} positionY={positionY} />
         }
     }
 
@@ -25,3 +27,10 @@ const SelectedSprite = ({containerHeight, containerWidth, selectedAnimal, positi
 }
  
 export default SelectedSprite;
+
+
+
+
+
+
+

@@ -17,8 +17,6 @@ const FrogSprite = ({containerHeight, containerWidth, positionX, positionY}) => 
             height: "55px", 
             width: "60px", 
             display: "flex", 
-            // alignItems: "center", 
-            // justifyContent: "center", 
             position: "absolute",
             left: `${positionX}px`,
             top: `${positionY}px`,
