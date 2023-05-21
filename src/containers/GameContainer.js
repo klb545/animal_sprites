@@ -30,8 +30,8 @@ const GameContainer = () => {
             setPositionY(positionY - 10);
         }
     }
-    
-    const handleArrowKeys = (e) => {
+
+    window.onkeydown = function(e){
         if(selectedAnimal && e.code === 'ArrowRight'){
             moveRight();
         }
@@ -44,21 +44,7 @@ const GameContainer = () => {
         if(selectedAnimal && e.code === 'ArrowUp'){
             moveUp();
         }
-    };
-    // window.onkeydown = function(e){
-    //     if(selectedAnimal && e.code === 'ArrowRight'){
-    //         moveRight();
-    //     }
-    //     if(selectedAnimal && e.code === 'ArrowLeft'){
-    //         moveLeft();
-    //     }
-    //     if(selectedAnimal && e.code === 'ArrowDown'){
-    //         moveDown();
-    //     }
-    //     if(selectedAnimal && e.code === 'ArrowUp'){
-    //         moveUp();
-    //     }
-    // }
+    }
 
     const handleSpaceBarToggle = (e) => {
         if (e.code === 'Space') {
@@ -75,11 +61,9 @@ const GameContainer = () => {
     };
 
     useEffect(() => {
-        window.addEventListener("keydown", handleArrowKeys);
         window.addEventListener('keydown', handleSpaceBarToggle);
         // this is a 'cleanup' function - it removes the event listener
         return () => {
-            window.removeEventListener("keydown", handleArrowKeys);
             window.removeEventListener('keydown', handleSpaceBarToggle);
         }
     }, [selectedAnimal]);
