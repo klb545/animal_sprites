@@ -10,6 +10,8 @@ const GameContainer = () => {
 
     const [selectedAnimal, setSelectedAnimal] = useState("duck");
 
+    const [fishImage, setFishImage] = useState("heading left");
+
     const [fishPositionX, setFishPositionX] = useState(100);
     const [fishPositionY, setFishPositionY] = useState(100);
     const [frogPositionX, setFrogPositionX] = useState(150);
@@ -20,6 +22,7 @@ const GameContainer = () => {
     const moveRight = () => {
             if(selectedAnimal=="fish" && fishPositionX <= containerWidth - 70){
                 setFishPositionX(fishPositionX + 10);
+                setFishImage("heading right");
             }
             if(selectedAnimal=="frog" && frogPositionX <= containerWidth - 70){
                 setFrogPositionX(frogPositionX + 10);
@@ -31,6 +34,7 @@ const GameContainer = () => {
     const moveLeft = () => {
         if(selectedAnimal=="fish" && fishPositionX >= 10){
             setFishPositionX(fishPositionX - 10);
+            setFishImage("heading left");
         }
         if(selectedAnimal=="frog" && frogPositionX >= 10){
             setFrogPositionX(frogPositionX - 10);
@@ -103,7 +107,7 @@ const GameContainer = () => {
         <div className="game-container" style={{height: `${containerHeight}px`, width: `${containerWidth}px`}}>
             {/* <SelectedSprite containerHeight={containerHeight} containerWidth={containerWidth} selectedAnimal={selectedAnimal} positionX={positionX} positionY={positionY}/> */}
             {/* {selectedAnimal == "fish" ? <FishSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={positionX} positionY={positionY}/> : selectedAnimal == "frog" ? <FrogSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={positionX} positionY={positionY}/> : <DuckSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={positionX} positionY={positionY}/>} */}
-            <FishSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={fishPositionX} positionY={fishPositionY}/>
+            <FishSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={fishPositionX} positionY={fishPositionY} fishImage={fishImage}/>
             <FrogSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={frogPositionX} positionY={frogPositionY}/>
             <DuckSprite containerHeight={containerHeight} containerWidth={containerWidth} positionX={duckPositionX} positionY={duckPositionY}/>
         </div>
