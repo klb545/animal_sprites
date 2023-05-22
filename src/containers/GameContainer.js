@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import SelectedSprite from "../components/SelectedSprite";
+// import SelectedSprite from "../components/SelectedSprite";
 import FishSprite from "../components/FishSprite";
 import FrogSprite from "../components/FrogSprite";
 import DuckSprite from "../components/DuckSprite";
