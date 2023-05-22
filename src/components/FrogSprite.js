@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 
 const FrogSprite = ({containerHeight, containerWidth, positionX, positionY}) => {
 
-    const transparentPix = <div className="pixel"></div>
-    const greenPix = <div className="pixel frog-green-pixel"></div>
-    const blackPix = <div className="pixel black-pixel"></div>
-    const whitePix = <div className="pixel white-pixel"></div>
-    const lightGreenPix = <div className="pixel frog-light-green-pixel"></div>
-    const creamPix = <div className="pixel frog-cream-pixel"></div>
-    const yellowPix = <div className="pixel frog-yellow-pixel"></div>
+    const transparent = <div className="pixel"></div>
+    const green = <div className="pixel frog-green-pixel"></div>
+    const black = <div className="pixel black-pixel"></div>
+    const white = <div className="pixel white-pixel"></div>
+    const lightGreen = <div className="pixel frog-light-green-pixel"></div>
+    const cream = <div className="pixel frog-cream-pixel"></div>
+    const yellow = <div className="pixel frog-yellow-pixel"></div>
 
   return (
     <div 
@@ -23,112 +23,55 @@ const FrogSprite = ({containerHeight, containerWidth, positionX, positionY}) => 
         }}
     >
         <div>
-            {transparentPix}{transparentPix}{transparentPix}{transparentPix}{transparentPix}{transparentPix}{transparentPix}{transparentPix}{transparentPix}
-            {/* {transparentPix} */}
+            {transparent}{transparent}{transparent}{transparent}{transparent}{transparent}{transparent}{transparent}{transparent}
+            {/* {transparent} */}
         </div> 
         <div>
-            {transparentPix}{transparentPix}
-            {greenPix}{greenPix}
-            {transparentPix}
-            {greenPix}{greenPix}{greenPix}{greenPix}{greenPix}
-            {transparentPix}
-            {/* {transparentPix} */}
+            {transparent}{transparent}{green}{green}{transparent}{green}{green}{green}{green}{green}{transparent}
+            {/* {transparent} */}
         </div>  
         <div>
-            {transparentPix}
-            {greenPix}
-            {whitePix}
-            {blackPix}
-            {greenPix}
-            {lightGreenPix}{lightGreenPix}{lightGreenPix}{lightGreenPix}
-            {greenPix}{greenPix}
-            {/* {transparentPix} */}
+            {transparent}{green}{white}{black}{green}{lightGreen}{lightGreen}{lightGreen}{lightGreen}{green}{green}
+            {/* {transparent} */}
         </div> 
         <div>
-            {transparentPix}
-            {greenPix}
-            {blackPix}{blackPix}
-            {greenPix}
-            {lightGreenPix}{lightGreenPix}
-            {creamPix}{creamPix}
-            {yellowPix}
-            {greenPix}
-            {/* {transparentPix} */}
+            {transparent}{green}{black}{black}{green}{lightGreen}{lightGreen}{cream}{cream}{yellow}{green}
+            {/* {transparent} */}
         </div> 
         <div>
-            {transparentPix}{transparentPix}
-            {greenPix}{greenPix}
-            {lightGreenPix}
-            {blackPix}
-            {creamPix}{creamPix}{creamPix}{creamPix}
-            {yellowPix}
-            {/* {transparentPix} */}
+            {transparent}{transparent}{green}{green}{lightGreen}{black}{cream}{cream}{cream}{cream}{yellow}
+            {/* {transparent} */}
         </div> 
         <div>
-            {transparentPix}{transparentPix}{transparentPix}
-            {lightGreenPix}
-            {blackPix}
-            {creamPix}{creamPix}{creamPix}{creamPix}
-            {yellowPix}
-            {transparentPix}
-            {/* {transparentPix} */}
+            {transparent}{transparent}{transparent}{lightGreen}{black}{cream}{cream}{cream}{cream}{yellow}{transparent}
+            {/* {transparent} */}
         </div> 
         <div>
-            {transparentPix}{transparentPix}{transparentPix}
-            {lightGreenPix}
-            {blackPix}
-            {creamPix}{creamPix}{creamPix}{creamPix}
-            {yellowPix}
-            {transparentPix}
-            {/* {transparentPix} */}
+            {transparent}{transparent}{transparent}{lightGreen}{black}{cream}{cream}{cream}{cream}{yellow}{transparent}
+            {/* {transparent} */}
         </div>  
         <div>
-            {transparentPix}{transparentPix}
-            {greenPix}{greenPix}
-            {lightGreenPix}
-            {blackPix}
-            {creamPix}{creamPix}{creamPix}{creamPix}
-            {yellowPix}
-            {/* {transparentPix} */}
+            {transparent}{transparent}{green}{green}{lightGreen}{black}{cream}{cream}{cream}{cream}{yellow}
+            {/* {transparent} */}
         </div> 
         <div>
-            {transparentPix}
-            {greenPix}
-            {blackPix}{blackPix}
-            {greenPix}
-            {lightGreenPix}{lightGreenPix}
-            {creamPix}{creamPix}
-            {yellowPix}
-            {greenPix}
-            {/* {transparentPix} */}
+            {transparent}{green}{black}{black}{green}{lightGreen}{lightGreen}{cream}{cream}{yellow}{green}
+            {/* {transparent} */}
         </div> 
         <div>
-            {transparentPix}
-            {greenPix}
-            {whitePix}
-            {blackPix}
-            {greenPix}
-            {lightGreenPix}{lightGreenPix}{lightGreenPix}{lightGreenPix}
-            {greenPix}{greenPix}
-            {/* {transparentPix} */}
+            {transparent}{green}{white}{black}{green}{lightGreen}{lightGreen}{lightGreen}{lightGreen}{green}{green}
+            {/* {transparent} */}
         </div> 
         <div>
-            {transparentPix}{transparentPix}
-            {greenPix}{greenPix}
-            {transparentPix}
-            {greenPix}{greenPix}{greenPix}{greenPix}{greenPix}
-            {transparentPix}
-            {/* {transparentPix} */}
+            {transparent}{transparent}{green}{green}{transparent}{green}{green}{green}{green}{green}{transparent}
+            {/* {transparent} */}
         </div> 
         <div>
-            {transparentPix}{transparentPix}{transparentPix}{transparentPix}{transparentPix}{transparentPix}{transparentPix}{transparentPix}{transparentPix}{transparentPix}{transparentPix}
-            {/* {transparentPix} */}
+            {transparent}{transparent}{transparent}{transparent}{transparent}{transparent}{transparent}{transparent}{transparent}{transparent}{transparent}
+            {/* {transparent} */}
         </div> 
     </div>
   );
 };
 
 export default FrogSprite;
-
-
-
